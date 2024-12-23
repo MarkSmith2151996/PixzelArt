@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelArt Maker</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>PixelArt Maker</h1>
+        </header>
+        
+        <main>
+            <div class="tools-left">
+                <div class="color-section">
+                    <h3>Colors</h3>
+                    <input type="color" id="colorPicker" value="#000000">
+                    <div class="preset-colors" id="presetColors"></div>
+                </div>
+                <div class="tools-section">
+                    <h3>Tools</h3>
+                    <button id="pencilTool" class="tool-active">Pencil</button>
+                    <button id="eraserTool">Eraser</button>
+                    <button id="fillTool">Fill</button>
+                    <button id="clearCanvas">Clear All</button>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <div id="pixelGrid"></div>
+            </div>
+
+            <div class="tools-right">
+                <div class="size-controls">
+                    <h3>Canvas Size</h3>
+                    <label for="canvas-size">Canvas Size: <span id="size-value">32x32</span></label>
+                    <input type="range" id="canvas-size" min="8" max="64" value="32">
+                </div>
+                <div class="save-section">
+                    <button id="saveButton">Save Artwork</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Stylish Confirmation Box -->
+        <div id="confirmation-box" class="confirmation-box hidden">
+            File successfully downloaded!
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact">
+            <p>Contact Me: <a href="mailto:contact@example.com">contact@example.com</a></p>
+            <p>Made by Anthony LaManna</p>
+        </div>
+    </div>
+
+    <script src="PixelGrid.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>

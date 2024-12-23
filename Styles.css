@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f6fa;
+    --border-color: #dcdde1;
+    --text-color: #2f3640;
+    --background-color: #2f3640; /* Dark background */
+    --box-background: #34495e;
+    --hover-color: #2980b9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+main {
+    display: flex;
+    gap: 2rem;
+    background: var(--box-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tools-left, .tools-right {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#pixelGrid {
+    background: white;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.pixel {
+    border: 1px solid #eee;
+    background: transparent;
+    transition: background-color 0.1s;
+}
+
+.pixel:hover {
+    border-color: var(--primary-color);
+}
+
+.color-section, .tools-section, .size-controls {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#colorPicker {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.preset-colors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.color-preset {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-preset:hover {
+    transform: scale(1.1);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.25rem 0;
+    border: none;
+    border-radius: 0.25rem;
+    background: white;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tool-active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.size-input {
+    margin-bottom: 1rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+#saveButton {
+    background: var(--primary-color);
+    color: white;
+}
+
+#saveButton:hover {
+    opacity: 0.9;
+}
+
+/* Confirmation Box */
+.confirmation-box {
+    background: #27ae60;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.confirmation-box.hidden {
+    display: none;
+}
+
+#contact {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+#contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
